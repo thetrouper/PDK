@@ -10,13 +10,13 @@ import java.io.*;
 
 public interface JsonSerializable<T> {
 
-    Gson gson = new GsonBuilder().setPrettyPrinting().serializeNulls().create();
+    Gson gson = new GsonBuilder().setPrettyPrinting().serializeNulls().setLenient().create();
     File getFile();
 
     default String serialize(boolean pretty) {
         Gson gson;
         if (pretty) {
-            gson = new GsonBuilder().setPrettyPrinting().create();
+            gson = new GsonBuilder().setPrettyPrinting().setLenient().create();
         }
         else {
             gson = new Gson();

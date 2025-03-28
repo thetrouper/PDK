@@ -2,6 +2,7 @@ package io.github.itzispyder.pdk;
 
 import io.github.itzispyder.pdk.events.listeners.RegistryListeners;
 import io.github.itzispyder.pdk.utils.misc.Voidable;
+import io.github.itzispyder.pdk.utils.raytracers.BlockDisplayRaytracer;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
@@ -18,6 +19,7 @@ public final class PDK {
             active = true;
             PDK.plugin = plugin.getClass();
             new RegistryListeners().register();
+            BlockDisplayRaytracer.cleanup();
         }
     }
 
